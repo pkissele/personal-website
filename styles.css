@@ -6,13 +6,13 @@ div {
   text-shadow: rgba(255, 255, 255, 0.7) 0px 0px 5px;
 }
 #contentArea {
-  background: rgb(18, 16, 16);
+  background: rgb(27, 26, 27);
 }
 
 #screenArea {
   font-family: "VT323";
   font-weight: 100;
-  background-color: #1b1a1b;
+  background-color: rgb(27, 26, 27);
   height: 100vh;
   width: 100vw;
   display: flex;
@@ -45,7 +45,8 @@ div {
   display: none;
 }
 .linker {
-  position: fixed;
+  /* background-color: white; */
+  position: absolute;
 }
 
 .linkText {

@@ -13,6 +13,7 @@ function randStr(strLen) {
 }
 
 document.addEventListener('DOMContentLoaded', async function() {
+  await sleep(1000);
   let offSet = document.getElementById("mainSection").getBoundingClientRect();
   console.log(offSet);
 
@@ -26,6 +27,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     let scrollTop = (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
     bounder.className = "linker"
     console.log(rect);
+    // bounder.style.top = String(rect.top)+"px";
     bounder.style.top = String(rect.top - offSet.top - boundOffset)+"px";
     bounder.style.left = String(rect.left - offSet.left - boundOffset) +"px";
     bounder.style.width = String(rect.right - rect.left + 2*boundOffset)+"px";
@@ -33,9 +35,10 @@ document.addEventListener('DOMContentLoaded', async function() {
 
     // bounder.style.bottom = String(rect.bottom + 20)+"px";
     // bounder.style.right = String(rect.right + 20)+"px";
-    console.log(bounder)
+    console.log(bounder);
 
     // Append the new element to the parent
     element.appendChild(bounder);
+    console.log(bounder.getBoundingClientRect());
   });
 });
