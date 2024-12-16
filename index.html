@@ -8,24 +8,34 @@
 	<link rel="stylesheet" href="crt.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=VT323&display=swap" rel="stylesheet">
-	<title>Peter Kisselev</title>
+	<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=VT323&display=swap" rel="stylesheet">
+	<title>Petr Kisselev</title>
 </head>
-<body>
+<body class="noselect">
 	<div id="contentArea">
 		<div id="screen">
 			<div id="screenArea" class="crt">
 				<div id="mainSection">
-					<div class="titleText"><a id="textRandLoad">Petr Kisselev</a></div>
+					<div class="titleText">&lt;<a id="textRandLoad">Petr Kisselev</a>&gt;</div>
 					<div class="bodyText">
-						<a>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam et vulputate odio, sed porttitor tellus. Sed a pharetra turpis, eget laoreet felis. Nunc in porta diam, eget tincidunt justo. In eu nibh ac erat cursus malesuada. Maecenas eu bibendum erat, sit amet iaculis tellus. Phasellus varius ipsum eget feugiat laoreet. Mauris rhoncus est id mauris auctor dictum. Morbi sit amet orci id lacus tincidunt facilisis. Morbi tristique fermentum diam. Nulla nec sapien ut tellus vestibulum blandit. Vestibulum sed mi tortor. Duis diam enim, sodales id accumsan ac, dapibus vel mauris.
-							Etiam quis quam semper dui facilisis finibus. Pellentesque ullamcorper auctor odio, eget pulvinar diam semper sit amet. In ultrices, orci sed ultrices pellentesque, est mauris porttitor nulla, sed ornare ipsum ante eu magna. Sed efficitur porttitor risus id gravida. Cras molestie sem a eleifend faucibus. Phasellus sagittis pretium mauris in aliquam. Maecenas sit amet felis diam. Suspendisse nulla ante, pharetra at ante sed, elementum dignissim mi. Curabitur varius velit tortor, eget rhoncus leo faucibus ut. Sed ut semper leo. Aenean in lobortis tortor. Proin porta pharetra ipsum id aliquet. Proin quis tincidunt est, quis accumsan nibh. Nam vel lorem non magna interdum semper ornare sed nisi. Sed maximus turpis nulla.
-						</a>
+						<p>
+							&gt; Hello! This is my website :&rpar;
+						</p>
+						<p>
+							&gt; I am an aspiring computer science student, student researcher, web developer, and curious person!
+						</p>
+						<p>
+							&gt; My papers:
+							<ul>
+								<li class="screenEl">
+									<a class="linkText" href="static/papers/GCN-SIR.pdf">
+										GCN Paper
+									</a>
+								</li>
+							</ul>
+						</p>
 						<div>
-							<a class="linkText" href="static/papers/GCN-SIR.pdf">
-								GCN Paper
-							</a>
+
 						</div>
 					</div>
 				</div>
@@ -45,7 +55,9 @@
 <script>
 	const letDict = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	const FPS = 15;
-	const effectWait = 5000; // In milliseconds
+	const effectWait = 5000;
+	const jumbleWait = 3000; // In milliseconds
+	let direction = -1;
 
 	function sleep(ms) {
 		return new Promise(resolve => setTimeout(resolve, ms));
@@ -60,29 +72,35 @@
 	}
 
 	document.addEventListener('DOMContentLoaded', async function() {
+		let runEl = document.getElementById("textRandLoad");
+		let oldText = runEl.innerText;
 		while(true) {
-			runEl = document.getElementById("textRandLoad");
-			oldText = runEl.innerText;
+			//console.log()
 
-			effectText = randStr(oldText.length);
+			//let effectText = randStr(oldText.length);
+			let effectText = oldText;
 			runEl.innerText = effectText;
 			runEl.style.display = 'unset';
 
-			effectTime = Date.now();
-			frameTime = Date.now();
+			let effectTime = Date.now();
+			let frameTime = Date.now();
 
-			charInd = 0;
-			frame = 0;
+			let charInd = 0;
+			let frame = 0;
+			direction = direction * -1
 			while(charInd < oldText.length) {
 				if(oldText[charInd] == " ") {charInd++; effectTime = Date.now()}
-
 				const effectSpeed = 200; //In milliseconds
-				effectText = (effectText.substring(0, charInd+1) + randStr(oldText.length - charInd - 1)).substring(0, oldText.length);
+
+				if (direction == 1) {
+					effectText = (oldText.substring(0, charInd+1) + randStr(oldText.length - charInd - 1)).substring(0, oldText.length);
+				} else {
+					effectText = (randStr(charInd+1) + oldText.substring(charInd+1, oldText.length)).substring(0, oldText.length);
+				}
+
 				runEl.innerText = effectText;
 
 				if(Date.now() - effectSpeed >= effectTime) {
-					effectText = (oldText.substring(0, charInd+1) + effectText.substring(charInd+1)).substring(0, oldText.length);
-					runEl.innerText = effectText;
 					charInd += 1;
 					effectTime = Date.now();
 				}
@@ -91,7 +109,17 @@
 				frame += 1;
 				// console.log(frame);
 			}
-			await sleep(effectWait);
+			if (direction == 1) {
+				await sleep(effectWait);
+				runEl.innerText = oldText;
+			} else {
+				let waitTime = Date.now();
+				while(Date.now() - waitTime < jumbleWait) {
+					effectText = randStr(oldText.length);
+					runEl.innerText = effectText;
+					if(Date.now() - 1000/FPS < frameTime) { await sleep(frameTime - Date.now() + 1000/FPS); frameTime = Date.now(); }
+				}
+			}
 		}
 	});
 </script>

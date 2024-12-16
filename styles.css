@@ -1,44 +1,64 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
 body {
+  height: 100%;
   margin: 0;
 }
 div {
-  color: white;
-  text-shadow: rgba(255, 255, 255, 0.7) 0px 0px 5px;
+  /* color: white; */
+  /* text-shadow: rgba(255, 255, 255, 0.7) 0px 0px 5px; */
+  color: rgb(51, 255, 51);
+  text-shadow: rgba(51, 255, 51, 0.3) 0px 0px 5px;
 }
 #contentArea {
+  height: 100%;
   background: rgb(27, 26, 27);
 }
 
+#screen {
+  height: max-content;
+}
+
 #screenArea {
-  font-family: "VT323";
-  font-weight: 100;
+  /* font-family: "VT323"; */
+  /* font-family: "Chakra Petch"; */
+  font-family: "Space Mono", monospace;
+  font-weight: 800;
   background-color: rgb(27, 26, 27);
-  height: 100vh;
+  height: max-content;
   width: 100vw;
   display: flex;
   justify-content: center;
 }
 
 #mainSection {
-  position: absolute;
-  margin: auto;
-  top: 10%;
+  margin: 5vh auto auto auto;
   width: 90%;
-  height: 80%;
+  height: max-content;
   display: flex;
   align-items: center;
   flex-direction: column;
 }
 
+.screenEl {
+  margin-inline-start: 40px;
+}
+
 .titleText {
-  /* transition: opacity .3s ease-in-out, transform .3s ease-in-out; */
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
   font-size: 100px;
   color: rgb(51, 255, 51);
+  /* color: rgb(255, 176, 0); */
   text-shadow: rgba(51, 255, 51, 0.7) 0px 0px 20px;
 }
 
 .bodyText {
-  font-size: 30px;
+  font-size: 25px;
+  font-weight: 400;
+  text-shadow: rgba(51, 255, 51, 0.5) 0px 0px 20px;
 }
 
 #textRandLoad {
@@ -51,5 +71,24 @@ div {
 
 .linkText {
   color: white;
+}
+
+.noscroll {
+  overflow:hidden;
+  padding-right:18px !important;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+          user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+
+.nodisplay{
+  display: none;
 }
 
