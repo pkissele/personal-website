@@ -1,10 +1,10 @@
 html {
-  height: 100%;
+  /* height: 100%; */
   width: 100%;
 }
 
 body {
-  height: 100%;
+  /* height: 100%; */
   margin: 0;
 }
 div {
@@ -29,7 +29,7 @@ div {
   font-weight: 800;
   background-color: rgb(27, 26, 27);
   height: max-content;
-  width: 100vw;
+  /* width: 100vw; */
   display: flex;
   justify-content: center;
 }
@@ -55,15 +55,18 @@ div {
   text-shadow: rgba(51, 255, 51, 0.7) 0px 0px 20px;
 }
 
-.bodyText {
+#topSection {
+  width: 90vw;
+  display: flex;
+  justify-content: center;
+}
+
+.bodySection {
   font-size: 25px;
   font-weight: 400;
   text-shadow: rgba(51, 255, 51, 0.5) 0px 0px 20px;
 }
 
-#textRandLoad {
-  display: none;
-}
 .linker {
   /* background-color: white; */
   position: absolute;
@@ -71,6 +74,32 @@ div {
 
 .linkText {
   color: white;
+}
+
+#renderEmbed {
+  overflow: hidden;
+  border-width: 3px;
+  width: 500px;
+  height: 500px;
+  display: block;
+  padding: 0px;
+  overflow:hidden;
+  background-color: transparent;
+}
+
+#renderWrapper {
+  position: relative;
+  z-index: 1000;
+  width: fit-content;
+  box-shadow:0px 0px 0px 20px rgb(255, 0, 0) inset;
+}
+
+#renderWrapper::before {
+  content: " ";
+  position: absolute;
+  z-index: 1000;
+  width: fit-content;
+  box-shadow:0px 0px 0px 20px rgb(255, 0, 0) inset;
 }
 
 .noscroll {

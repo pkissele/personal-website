@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="main.js"></script>
+	<link rel="icon" type="image/x-icon" href="logo.png">
 	<link rel="stylesheet" href="styles.css">
 	<link rel="stylesheet" href="crt.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,16 +17,20 @@
 		<div id="screen">
 			<div id="screenArea" class="crt">
 				<div id="mainSection">
-					<div class="titleText">&lt;<a id="textRandLoad">Petr Kisselev</a>&gt;</div>
-					<div class="bodyText">
-						<p>
-							&gt; Hello! This is my website :&rpar;
+					<div id="topSection">
+						<div class="titleText">&lt;<a id="textRandLoad">Petr Kisselev</a>&gt;</div>
+					</div>
+					<div class="bodySection">
+						<p>&gt;
+							Hello! This is my website :&rpar;
 						</p>
-						<p>
-							&gt; I am an aspiring computer science student, student researcher, web developer, and curious person!
+
+						<p>&gt;
+							I am an aspiring computer science student, student researcher, web developer, and curious person!
 						</p>
-						<p>
-							&gt; My papers:
+
+						<p>&gt;
+							My papers:
 							<ul>
 								<li class="screenEl">
 									<a class="linkText" href="static/papers/GCN-SIR.pdf">
@@ -34,8 +39,25 @@
 								</li>
 							</ul>
 						</p>
-						<div>
 
+						<p>&gt;
+							Projects:
+							<ul>
+								<li class="screenEl">
+									<p>
+										Javascript-based rasterizer, using no imports or prewritten code.
+									</p>
+									<p>
+										Can be viewed below (interactive!)
+									</p>
+									<div id="renderWrapper">
+										<iframe id="renderEmbed" src="http://atvaster.github.io/3d-render/index.html"></iframe>
+									</div>
+								</li>
+							</ul>
+						</p>
+
+						<div>
 						</div>
 					</div>
 				</div>
@@ -45,10 +67,10 @@
 	<!-- Barrel effect -->
 	<div style="display: none; position: absolute; z-index:0; visibility: hidden;">
 		<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="svg-root" width="381" height="166" z-index="-1">
-				<filter id="SphereMap" filterUnits="objectBoundingBox" x="-0.40" y="-1.29" width="1.6" height="3.5">
-					<feImage id="mapa" result="Map" xlink:href="sphere_wide_1.png" />
-					<feDisplacementMap id="despMap" in="SourceGraphic" in2="map" scale="100" xChannelSelector="R" yChannelSelector="G" />
-				</filter>
+			<filter id="SphereMap" filterUnits="objectBoundingBox" x="-0.40" y="-1.29" width="1.6" height="3.5">
+				<feImage id="mapa" result="Map" xlink:href="sphere_wide_1.png" />
+				<feDisplacementMap id="despMap" in="SourceGraphic" in2="map" scale="100" xChannelSelector="R" yChannelSelector="G" />
+			</filter>
 		</svg>
 	</div>
 </body>
@@ -71,7 +93,7 @@
 	  return Array(strLen).join().split(',').map(function() { return letDict.charAt(Math.floor(Math.random() * letDict.length)); }).join('');
 	}
 
-	document.addEventListener('DOMContentLoaded', async function() {
+	window.addEventListener('DOMContentLoaded', async function() {
 		let runEl = document.getElementById("textRandLoad");
 		let oldText = runEl.innerText;
 		while(true) {
