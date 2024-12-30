@@ -13,12 +13,16 @@ div {
   color: rgb(51, 255, 51);
   text-shadow: rgba(51, 255, 51, 0.3) 0px 0px 5px;
 }
+
 #contentArea {
+  display: flex;
+  justify-content: center;
   height: 100%;
   background: rgb(27, 26, 27);
 }
 
 #screen {
+  width: min(1200px, 80%);
   height: max-content;
 }
 
@@ -36,7 +40,6 @@ div {
 
 #mainSection {
   margin: 5vh auto auto auto;
-  width: 90%;
   height: max-content;
   display: flex;
   align-items: center;
@@ -53,12 +56,21 @@ div {
   color: rgb(51, 255, 51);
   /* color: rgb(255, 176, 0); */
   text-shadow: rgba(51, 255, 51, 0.7) 0px 0px 20px;
+  word-break: break-all;
 }
 
 #topSection {
-  width: 90vw;
+  /* width: 90vw; */
   display: flex;
   justify-content: center;
+}
+
+.textLine {
+  margin-bottom: 40px;
+}
+
+#contactInfo {
+  padding-left: 50px;
 }
 
 .bodySection {
@@ -89,17 +101,26 @@ div {
 
 #renderWrapper {
   position: relative;
-  z-index: 1000;
+  z-index: 1;
   width: fit-content;
-  box-shadow:0px 0px 0px 20px rgb(255, 0, 0) inset;
+  border-style: double;
+  border-color: rgba(51, 255, 51, 1);
+  border-width: 7px;
+  box-shadow: 0px 0px 40px rgba(51, 255, 51, 0.2);
 }
 
 #renderWrapper::before {
+  pointer-events: none;
   content: " ";
   position: absolute;
-  z-index: 1000;
+  z-index: 1;
   width: fit-content;
-  box-shadow:0px 0px 0px 20px rgb(255, 0, 0) inset;
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  -webkit-box-shadow: inset 0px 0px 0px 3px rgba(0,0,0,1);
+  -moz-box-shadow: inset 0px 0px 0px 3px rgba(0,0,0,1);
+  box-shadow: inset 0px 0px 0px 3px rgba(0,0,0,1);
 }
 
 .noscroll {
