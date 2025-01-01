@@ -1,12 +1,11 @@
 html {
-  /* height: 100%; */
   width: 100%;
 }
 
 body {
-  /* height: 100%; */
   margin: 0;
 }
+
 div {
   /* color: white; */
   /* text-shadow: rgba(255, 255, 255, 0.7) 0px 0px 5px; */
@@ -33,7 +32,6 @@ div {
   font-weight: 800;
   background-color: rgb(27, 26, 27);
   height: max-content;
-  /* width: 100vw; */
   display: flex;
   justify-content: center;
 }
@@ -95,7 +93,7 @@ div {
   height: 500px;
   display: block;
   padding: 0px;
-  overflow:hidden;
+  overflow: hidden;
   background-color: transparent;
 }
 
@@ -118,24 +116,22 @@ div {
   background-color: transparent;
   width: 100%;
   height: 100%;
-  -webkit-box-shadow: inset 0px 0px 0px 3px rgba(0,0,0,1);
-  -moz-box-shadow: inset 0px 0px 0px 3px rgba(0,0,0,1);
-  box-shadow: inset 0px 0px 0px 3px rgba(0,0,0,1);
+  -webkit-box-shadow: inset 0px 0px 0px 4px rgba(0,0,0,1);
+  -moz-box-shadow: inset 0px 0px 0px 4px rgba(0,0,0,1);
+  box-shadow: inset 0px 0px 0px 4px rgba(0,0,0,1);
 }
 
 .noscroll {
   overflow:hidden;
-  padding-right:18px !important;
+  padding-right: 18px !important;
 }
 
 .noselect {
-  -webkit-touch-callout: none; /* iOS Safari */
-  -webkit-user-select: none; /* Safari */
-  -khtml-user-select: none; /* Konqueror HTML */
-      -moz-user-select: none; /* Old versions of Firefox */
-      -ms-user-select: none; /* Internet Explorer/Edge */
-          user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
 }
 
 .nodisplay{
