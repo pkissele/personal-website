@@ -21,8 +21,9 @@ div {
 }
 
 #screen {
-  width: min(1200px, 80%);
+  width: min(1200px, 80vw);
   height: max-content;
+  padding-bottom: 200px;
 }
 
 #screenArea {
@@ -34,6 +35,7 @@ div {
   height: max-content;
   display: flex;
   justify-content: center;
+  width: 100%;
 }
 
 #mainSection {
@@ -42,6 +44,7 @@ div {
   display: flex;
   align-items: center;
   flex-direction: column;
+  width: 100%;
 }
 
 .screenEl {
@@ -61,6 +64,7 @@ div {
   /* width: 90vw; */
   display: flex;
   justify-content: center;
+  /* width: 100%; */
 }
 
 .textLine {
@@ -72,6 +76,7 @@ div {
 }
 
 .bodySection {
+  width: 100%;
   font-size: 25px;
   font-weight: 400;
   text-shadow: rgba(51, 255, 51, 0.5) 0px 0px 20px;
@@ -84,13 +89,14 @@ div {
 
 .linkText {
   color: white;
+  word-break: break-all;
 }
 
 #renderEmbed {
   overflow: hidden;
   border-width: 3px;
-  width: 500px;
-  height: 500px;
+  width: min(500px, 60vw);
+  height: min(500px, 60vw);
   display: block;
   padding: 0px;
   overflow: hidden;
