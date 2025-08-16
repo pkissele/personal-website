@@ -23,7 +23,7 @@ div {
 #screen {
     width: min(1200px, 80vw);
     height: max-content;
-    padding-bottom: 200px;
+    /* padding-bottom: 200px; */
 }
 
 #screenArea {
