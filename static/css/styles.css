@@ -358,6 +358,15 @@ body::before {
     }
 }
 
+
+/* TODO: FIX FORMATTING ON MOBILE */
+@media (max-width: 600px) {
+    /* Hide the center image */
+    .photoStackPreview .photo3 {
+        display: none;
+    }
+}
+
 .projectLinkBlock {
     display: flex;
     align-items: center;
