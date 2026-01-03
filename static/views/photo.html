@@ -1,0 +1,108 @@
+---
+layout: none
+permalink: /photos
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/x-icon" href="static/images/logo.png">
+    <link rel="stylesheet" href="static/css/photo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gantari:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/exif-js/2.3.0/exif.min.js"></script>
+    <script src="static/js/photo.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photos | Petr Kisselev</title>
+</head>
+<body>
+    <div id="contentArea">
+        <div id="headerArea">
+            <div id="headerWrap">
+                <div id="header">
+                    Photography.
+                </div>
+            </div>
+        </div>
+
+        <div id="mainArea">
+            <div id="imageGrid">
+                <div class="gridImgWrap" data-index="0">
+                    <img src="static/images/photos/DSCF0131_edited.jpg">
+                    <div class="gridImgWrapContent">
+                        <h3>Blank</h3>
+                        <p>...</p>
+                    </div>
+                </div>
+                <div class="gridImgWrap" data-index="1">
+                    <img src="static/images/photos/DSCF0215_edited.jpg">
+                    <div class="gridImgWrapContent">
+                        <h3>Blank</h3>
+                        <p>...</p>
+                    </div>
+                </div>
+                <div class="gridImgWrap" data-index="2">
+                    <img src="static/images/photos/DSCF0247_edited.jpg">
+                    <div class="gridImgWrapContent">
+                        <h3>Blank</h3>
+                        <p>...</p>
+                    </div>
+                </div>
+                <div class="gridImgWrap" data-index="3">
+                    <img src="static/images/photos/DSCF0448_edited.jpg">
+                    <div class="gridImgWrapContent">
+                        <h3>Blank</h3>
+                        <p>...</p>
+                    </div>
+                </div>
+                <div class="gridImgWrap" data-index="4">
+                    <img src="static/images/photos/DSCF0578.jpg">
+                    <div class="gridImgWrapContent">
+                        <h3>Blank</h3>
+                        <p>...</p>
+                    </div>
+                </div>
+                <div class="gridImgWrap" data-index="5">
+                    <img src="static/images/photos/DSCF0650.jpg">
+                    <div class="gridImgWrapContent">
+                        <h3>Blank</h3>
+                        <p>...</p>
+                    </div>
+                </div>
+                <div class="gridImgWrap" data-index="6">
+                    <img src="static/images/photos/DSCF2528.jpg">
+                    <div class="gridImgWrapContent">
+                        <h3>Blank</h3>
+                        <p>...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="lightbox" id="lightbox" onclick="closeLightboxOnBackdrop(event)">
+            <button class="lightbox-close" onclick="closeLightbox()">×</button>
+            <div class="lightbox-content">
+                <div class="lightbox-image-container">
+                    <img id="lightbox-img" src="" alt="">
+                </div>
+                <div class="lightbox-sidebar">
+                    <h2 id="lightbox-title">Image Details</h2>
+                    <div class="metadata-section" id="exifData">
+                        <h3>EXIF Data</h3>
+                        <div id="exifContent" class="loading">Loading EXIF data...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="footerArea">
+            Photography by Petr Kisselev is licensed under
+            <a href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</a>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" style="max-width: 1em; max-height: 1em; margin-left: 0.2em"/>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" style="max-width: 1em; max-height: 1em; margin-left: 0.2em"/>
+            <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" style="max-width: 1em; max-height: 1em; margin-left: 0.2em"/>
+        </div>
+    </div>
+</body>
+</html>
